@@ -1,0 +1,1526 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Thọ Khang Bảo Giám — Hành Trình Nhân Quả</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+<style>
+  :root {
+    box-sizing: border-box;
+    --paper: #EDE4D2;
+    --paper-2: #E4D8C0;
+    --ink: #2A241C;
+    --ink-soft: #55493A;
+    --seal: #8C2F2A;
+    --seal-dark: #6E211D;
+    --jade: #3F6155;
+    --gold: #A9803F;
+    --rule: rgba(42,36,28,0.18);
+    --card: #F6F0E2;
+    --shadow: rgba(42,36,28,0.22);
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  :root:not([data-theme="light"]) {
+    @media (prefers-color-scheme: dark) {
+      --paper: #1D1912;
+      --paper-2: #241F17;
+      --ink: #EDE3D0;
+      --ink-soft: #C8BBA3;
+      --seal: #D9756A;
+      --seal-dark: #C25F55;
+      --jade: #7FAE9B;
+      --gold: #D6AD6E;
+      --rule: rgba(237,227,208,0.18);
+      --card: #241E15;
+      --shadow: rgba(0,0,0,0.5);
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #1D1912;
+    --paper-2: #241F17;
+    --ink: #EDE3D0;
+    --ink-soft: #C8BBA3;
+    --seal: #D9756A;
+    --seal-dark: #C25F55;
+    --jade: #7FAE9B;
+    --gold: #D6AD6E;
+    --rule: rgba(237,227,208,0.18);
+    --card: #241E15;
+    --shadow: rgba(0,0,0,0.5);
+  }
+  html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+  html, body {
+    height: 100%;
+    margin: 0;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--paper);
+    background-image:
+      radial-gradient(ellipse at 20% 10%, rgba(169,128,63,0.08), transparent 55%),
+      radial-gradient(ellipse at 85% 90%, rgba(63,97,85,0.07), transparent 55%);
+    color: var(--ink);
+    font-family: 'Noto Serif', 'Times New Roman', serif;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    overflow-x: hidden;
+  }
+  .stage {
+    width: 100%;
+    max-width: 640px;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  header.top {
+    padding: 22px 22px 14px;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--rule);
+  }
+  header.top .brand {
+    font-family: 'Ma Shan Zheng', 'Noto Serif', serif;
+    font-size: 26px;
+    color: var(--seal);
+    letter-spacing: 0.5px;
+  }
+  header.top .phuc {
+    font-size: 14px;
+    color: var(--ink-soft);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  header.top .phuc b {
+    color: var(--jade);
+    font-size: 17px;
+    font-weight: 700;
+  }
+  main {
+    flex: 1;
+    padding: 26px 22px 40px;
+    display: flex;
+    flex-direction: column;
+  }
+  /* ---------- INTRO ---------- */
+  .intro {
+    text-align: center;
+    padding-top: 8px;
+  }
+  .intro .glyph {
+    font-family: 'Ma Shan Zheng', serif;
+    font-size: 64px;
+    color: var(--seal);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .intro h1 {
+    font-size: 27px;
+    line-height: 1.3;
+    margin: 6px 0 4px;
+    font-weight: 700;
+  }
+  .intro .sub {
+    color: var(--ink-soft);
+    font-size: 15px;
+    font-style: italic;
+    margin-bottom: 22px;
+  }
+  .intro p.lead {
+    text-align: left;
+    line-height: 1.75;
+    font-size: 16px;
+    color: var(--ink);
+    max-width: 52ch;
+    margin: 0 auto 26px;
+  }
+  .rule {
+    border: none;
+    border-top: 1px solid var(--rule);
+    margin: 22px 0;
+    width: 100%;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: var(--seal);
+    color: #F6EEDF;
+    border: none;
+    padding: 14px 26px;
+    font-family: 'Noto Serif', serif;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 3px;
+    cursor: pointer;
+    box-shadow: 0 3px 0 var(--seal-dark);
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
+    letter-spacing: 0.3px;
+  }
+  .btn:active {
+    transform: translateY(2px);
+    box-shadow: 0 1px 0 var(--seal-dark);
+  }
+  .btn.secondary {
+    background: transparent;
+    color: var(--ink);
+    border: 1px solid var(--rule);
+    box-shadow: none;
+  }
+  .btn.secondary:active { transform: translateY(1px); }
+  .btn.block { width: 100%; }
+  .btn:focus-visible, .choice:focus-visible, .chapter-card:focus-visible {
+    outline: 2px solid var(--jade);
+    outline-offset: 2px;
+  }
+
+  /* ---------- MAP / CHAPTER LIST ---------- */
+  .map-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 4px;
+  }
+  .map-sub {
+    color: var(--ink-soft);
+    font-size: 14px;
+    margin: 0 0 20px;
+  }
+  .chapters {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .chapter-card {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--gold);
+    border-radius: 2px;
+    padding: 16px 16px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    cursor: pointer;
+    text-align: left;
+    font-family: inherit;
+    color: var(--ink);
+    box-shadow: 0 2px 6px var(--shadow);
+  }
+  .chapter-card.done { border-left-color: var(--jade); opacity: 0.88; }
+  .chapter-card .num {
+    font-family: 'Ma Shan Zheng', serif;
+    font-size: 30px;
+    color: var(--seal);
+    min-width: 38px;
+    text-align: center;
+    flex-shrink: 0;
+  }
+  .chapter-card .info h3 {
+    margin: 0 0 4px;
+    font-size: 16.5px;
+    font-weight: 700;
+  }
+  .chapter-card .info p {
+    margin: 0;
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    line-height: 1.4;
+  }
+  .chapter-card .status {
+    margin-left: auto;
+    font-size: 12px;
+    color: var(--jade);
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+
+  /* ---------- STORY ---------- */
+  .story-tag {
+    font-size: 12.5px;
+    color: var(--gold);
+    text-transform: none;
+    letter-spacing: 0.4px;
+    margin-bottom: 6px;
+  }
+  .story-title {
+    font-size: 22px;
+    font-weight: 700;
+    margin: 0 0 16px;
+    line-height: 1.35;
+  }
+  .story-text {
+    font-size: 16.5px;
+    line-height: 1.85;
+    color: var(--ink);
+    margin-bottom: 26px;
+    white-space: pre-line;
+  }
+  .story-text.result {
+    font-style: italic;
+    color: var(--ink-soft);
+  }
+  .choices {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+  .choice {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    padding: 14px 16px;
+    font-family: inherit;
+    font-size: 15.5px;
+    line-height: 1.5;
+    color: var(--ink);
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    gap: 12px;
+  }
+  .choice .mark {
+    color: var(--seal);
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .choice:active { background: var(--paper-2); }
+
+  .result-banner {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    padding: 5px 12px;
+    border-radius: 2px;
+    margin-bottom: 14px;
+  }
+  .result-banner.good { background: rgba(63,97,85,0.14); color: var(--jade); }
+  .result-banner.bad { background: rgba(140,47,42,0.14); color: var(--seal); }
+  .result-banner.mixed { background: rgba(169,128,63,0.16); color: var(--gold); }
+
+  .karma-delta {
+    font-size: 14px;
+    color: var(--ink-soft);
+    margin-bottom: 22px;
+  }
+  .karma-delta b { color: var(--jade); }
+  .karma-delta b.neg { color: var(--seal); }
+
+  .actions {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 10px;
+  }
+
+  /* ---------- ENDING ---------- */
+  .ending .glyph {
+    font-family: 'Ma Shan Zheng', serif;
+    font-size: 54px;
+    color: var(--seal);
+    text-align: center;
+    margin-bottom: 4px;
+  }
+  .ending h2 {
+    text-align: center;
+    font-size: 23px;
+    margin: 0 0 6px;
+  }
+  .ending .score {
+    text-align: center;
+    color: var(--ink-soft);
+    font-size: 14px;
+    margin-bottom: 22px;
+  }
+  .ending p {
+    line-height: 1.8;
+    font-size: 16px;
+    margin-bottom: 18px;
+  }
+  .journal {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    padding: 14px 16px;
+    margin-bottom: 22px;
+  }
+  .journal h4 {
+    margin: 0 0 10px;
+    font-size: 13px;
+    color: var(--ink-soft);
+    font-weight: 600;
+  }
+  .journal-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    font-size: 14px;
+    padding: 6px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .journal-row:last-child { border-bottom: none; }
+  .journal-row span:first-child { color: var(--ink); flex: 1; }
+  .journal-row span:last-child { color: var(--jade); font-weight: 600; white-space: nowrap; }
+  .journal-row span:last-child.neg { color: var(--seal); }
+
+  footer.note {
+    text-align: center;
+    font-size: 12px;
+    color: var(--ink-soft);
+    padding: 4px 22px 18px;
+    line-height: 1.6;
+  }
+
+  .hidden { display: none !important; }
+
+  /* ---------- ILLUSTRATIONS ---------- */
+  .art-frame {
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px var(--shadow);
+    margin-bottom: 20px;
+    background: #0d1320;
+  }
+  .art-frame.hero { margin-bottom: 18px; }
+  .scene-art {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .chapter-card { align-items: stretch; }
+  .chapter-card .thumb {
+    width: 78px;
+    height: 78px;
+    border-radius: 5px;
+    overflow: hidden;
+    flex-shrink: 0;
+    position: relative;
+    box-shadow: 0 2px 6px var(--shadow);
+  }
+  .chapter-card .thumb svg { width: 100%; height: 100%; display: block; }
+  .chapter-card .thumb .num-badge {
+    position: absolute;
+    left: 4px;
+    bottom: 4px;
+    background: rgba(20,16,10,0.62);
+    color: #F6EEDF;
+    font-family: 'Ma Shan Zheng', serif;
+    font-size: 15px;
+    line-height: 1;
+    padding: 3px 6px 4px;
+    border-radius: 3px;
+  }
+</style>
+</head>
+<body>
+<div class="stage">
+  <header class="top">
+    <div class="brand">壽康寶鑑</div>
+    <div class="phuc" id="phucDisplay">Phước Đức&nbsp;<b id="phucValue">0</b></div>
+  </header>
+
+  <main id="main">
+    <!-- content injected by JS -->
+  </main>
+
+  <footer class="note" id="globalNote">
+    Trò chơi lựa chọn dựa trên tinh thần sách khuyến thiện cổ, minh họa nhân quả thiện ác qua các tình huống hư cấu.
+  </footer>
+</div>
+
+<script>
+(function(){
+
+  // ---------------- DATA ----------------
+  // Mỗi chương: tình huống mở đầu + các lựa chọn, mỗi lựa chọn có kết quả riêng và điểm phước đức.
+  var CHAPTERS = [
+    {
+      id: "hoc-tro",
+      artKey: "hoctro",
+      title: "Đêm Mưa Trong Quán Trọ",
+      tag: "Chương Một · Giữ Mình",
+      intro: "Chàng thư sinh họ Lâm lên kinh ứng thí, giữa đường gặp mưa lớn phải trọ lại một nhà dân ven đường. Đêm khuya, người chủ nhà vắng mặt, chỉ còn lại người con dâu góa trẻ tuổi coi sóc quán. Nàng vô tình để hé cửa phòng, ngọn đèn dầu hắt bóng, không một ai hay biết trong đêm mưa vắng vẻ.",
+      choices: [
+        {
+          text: "Lặng lẽ khép cửa phòng mình, giữ lễ tránh xa, không tơ tưởng chuyện phi nghĩa.",
+          delta: 8,
+          tone: "good",
+          result: "Chàng tự nhủ: \"Việc không ai thấy, trời đất vẫn thấy.\" Sáng hôm sau, chàng lên đường sớm, lòng thanh thản. Khoa thi năm ấy, chàng đỗ đạt, sau này làm quan thanh liêm, con cháu đời đời được kính trọng."
+        },
+        {
+          text: "Nghĩ rằng đêm khuya vắng vẻ, không ai hay biết, nên buông lời chọc ghẹo.",
+          delta: -10,
+          tone: "bad",
+          result: "Người con dâu góa hoảng sợ, gia đình chủ trọ hay chuyện, đuổi chàng đi giữa đêm mưa. Khoa thi năm ấy chàng lỡ dở vì đường sá trắc trở, tiếng xấu đồn xa, về sau công danh lận đận."
+        },
+        {
+          text: "Không làm gì thất lễ, nhưng lòng vẫn gợn chút tơ tưởng suốt đêm không ngủ được.",
+          delta: 2,
+          tone: "mixed",
+          result: "Chàng không phạm lỗi lầm nào, nhưng tự thấy hổ thẹn vì tâm mình chưa vững. Từ đó chàng gắng công tu tâm dưỡng tính, xem đây là một bài học nhớ đời."
+        }
+      ]
+    },
+    {
+      id: "quan-xu-an",
+      artKey: "quanxuan",
+      title: "Xét Lại Vụ Án Oan",
+      tag: "Chương Hai · Công Minh",
+      intro: "Viên quan họ Đồ mới nhậm chức, đêm đêm tự mình ra ngục thất xem xét hồ sơ các tù nhân. Ông phát hiện một người nông dân bị vu oan tội trộm cắp chỉ vì lời khai ép cung, trong khi kẻ có quyền thế đứng sau vụ việc lại là người quen biết với quan trên.",
+      choices: [
+        {
+          text: "Âm thầm thu thập chứng cứ, trình lên cấp trên minh oan cho người vô tội, không nhận công về mình.",
+          delta: 9,
+          tone: "good",
+          result: "Người nông dân được minh oan, trở về đoàn tụ gia đình. Quan trên khen ngợi sự cẩn trọng của viên quan họ Đồ nhưng không ai biết chính ông là người âm thầm điều tra. Về sau ông thăng tiến vững chắc, con cháu học hành thành đạt."
+        },
+        {
+          text: "Ỉm đi vụ việc vì sợ mất lòng người có quyền thế, để tránh phiền phức cho bản thân.",
+          delta: -9,
+          tone: "bad",
+          result: "Người nông dân vô tội chịu án oan, gia đình ly tán. Nhiều năm sau sự thật bị phanh phui, viên quan họ Đồ bị cách chức vì tội bao che, tiếng xấu lưu truyền trong sử sách địa phương."
+        },
+        {
+          text: "Trình báo sự việc nhưng đòi hỏi phải được ghi công trạng rõ ràng thì mới chịu ra mặt.",
+          delta: 3,
+          tone: "mixed",
+          result: "Vụ án cuối cùng cũng được minh oan, nhưng vì mặc cả công lao mà việc bị trì hoãn nhiều tháng, người nông dân phải chịu oan ức lâu hơn cần thiết. Viên quan được ghi công, nhưng trong lòng ông cũng thấy áy náy."
+        }
+      ]
+    },
+    {
+      id: "cua-roi",
+      artKey: "cuaroi",
+      title: "Túi Vàng Bỏ Quên Bên Chợ",
+      tag: "Chương Ba · Liêm Chính",
+      intro: "Người lái buôn tơ lụa họ Trịnh trên đường về nhặt được một túi vàng lớn ai đó đánh rơi giữa chợ, đủ để đổi đời cả gia đình vốn đang nợ nần chồng chất. Không một ai chứng kiến việc ông nhặt được của rơi.",
+      choices: [
+        {
+          text: "Ở lại chợ dò hỏi, tìm ra người đánh mất và trả lại nguyên vẹn, dù đang rất túng thiếu.",
+          delta: 8,
+          tone: "good",
+          result: "Người mất của hóa ra là một thương nhân lớn đang đi tìm vốn làm ăn cho một mối hàng quan trọng. Cảm kích trước sự trung thực hiếm có, ông ta mời họ Trịnh cùng hợp tác buôn bán. Từ đó gia đình họ Trịnh dần khấm khá, được xóm giềng kính nể."
+        },
+        {
+          text: "Lặng lẽ mang túi vàng về nhà, xem đó là món trời cho để trả nợ.",
+          delta: -8,
+          tone: "bad",
+          result: "Trả nợ xong, họ Trịnh vẫn không thấy yên lòng, luôn nơm nớp lo sợ có người tìm đến đòi lại. Về sau việc bị lộ, ông phải trả lại toàn bộ số vàng cùng với việc mang tiếng bất lương suốt đời, khách hàng dần xa lánh."
+        },
+        {
+          text: "Giữ lại một phần nhỏ gọi là lộc trời cho, còn lại đem trả cho khổ chủ.",
+          delta: -2,
+          tone: "mixed",
+          result: "Khổ chủ nhận lại phần lớn số vàng, có phần nghi ngại vì con số không khớp nhưng không truy cứu. Họ Trịnh nhận được lời cảm ơn nhạt nhẽo, trong lòng vẫn day dứt không yên vì sự không trọn vẹn của mình."
+        }
+      ]
+    },
+    {
+      id: "nang-dau",
+      artKey: "nangdau",
+      title: "Mùa Đông Bên Giường Bệnh",
+      tag: "Chương Bốn · Hiếu Đễ",
+      intro: "Nàng Thị Nguyệt về làm dâu chưa được bao lâu thì mẹ chồng ngã bệnh nặng, liệt giường suốt mấy tháng ròng. Chồng nàng phải đi làm ăn xa, mọi việc chăm sóc, thuốc thang, cơm nước đều dồn lên vai nàng dâu trẻ.",
+      choices: [
+        {
+          text: "Tận tụy chăm sóc ngày đêm, nấu thuốc, quạt mát, không một lời than vãn.",
+          delta: 8,
+          tone: "good",
+          result: "Mẹ chồng dần bình phục, cảm động trước tấm lòng của con dâu, xem nàng như con gái ruột. Tiếng thơm về nàng dâu hiếu thảo lan khắp làng trên xóm dưới, sau này con cái nàng cũng đều hiếu thuận, gia đình êm ấm nhiều đời."
+        },
+        {
+          text: "Viện cớ bận việc nhà, để mặc mẹ chồng cho người ở chăm sóc qua loa.",
+          delta: -8,
+          tone: "bad",
+          result: "Bệnh tình mẹ chồng trở nặng vì thiếu người chăm sóc chu đáo. Khi chồng nàng trở về hay chuyện, tình cảm vợ chồng rạn nứt, họ hàng làng xóm cũng dần xa lánh vì tiếng đồn về sự bạc bẽo của nàng."
+        },
+        {
+          text: "Chăm sóc chu đáo nhưng thường xuyên kể lể vất vả với hàng xóm để mong được khen ngợi.",
+          delta: 2,
+          tone: "mixed",
+          result: "Mẹ chồng cũng dần khỏe lại nhờ sự chăm sóc của nàng, nhưng những lời kể lể khiến công lao ấy mất đi phần ý nghĩa, người ngoài khen ít mà bàn tán nhiều hơn."
+        }
+      ]
+    },
+    {
+      id: "con-bac",
+      artKey: "conbac",
+      title: "Ngã Ba Đường Của Người Cha",
+      tag: "Chương Năm · Tề Gia",
+      intro: "Ông Tư vốn là thợ mộc lành nghề, nhưng những năm gần đây mê cờ bạc, thường xuyên qua lại tụ điểm cuối làng. Một đêm ông thắng lớn, trong túi rủng rỉnh bạc tiền, bước chân lại ngập ngừng trước ngã ba: một bên là nhà, nơi vợ con đang đợi cơm; một bên là chiếu bạc còn sáng đèn.",
+      choices: [
+        {
+          text: "Dừng chân, mang toàn bộ tiền thắng về đưa vợ, thề từ bỏ cờ bạc từ đêm nay.",
+          delta: 7,
+          tone: "good",
+          result: "Vợ con ông mừng rỡ, gia đình dần trả hết nợ cũ. Ông Tư quay lại nghề mộc, tay nghề giỏi lại thêm chăm chỉ, xưởng mộc nhỏ của ông dần có tiếng trong vùng, con cái được ăn học đến nơi đến chốn."
+        },
+        {
+          text: "Nghĩ rằng vận đỏ hiếm có, quay lại chiếu bạc để gỡ thêm chút nữa.",
+          delta: -9,
+          tone: "bad",
+          result: "Ông Tư thua sạch số tiền vừa thắng, còn nợ thêm một khoản lớn. Vợ con ông chịu cảnh túng quẫn, xưởng mộc phải bán để trả nợ, danh tiếng người thợ mộc lành nghề năm nào cũng mất theo canh bạc."
+        },
+        {
+          text: "Mang phần lớn tiền về nhà nhưng giữ lại một ít để chơi thêm cho vui.",
+          delta: -3,
+          tone: "mixed",
+          result: "Vợ con tạm yên lòng vì có tiền trang trải, nhưng số tiền giữ lại nhanh chóng thua hết, thói quen cũ vẫn còn đó như ngọn lửa chưa tắt hẳn, chỉ chờ dịp bùng lên trở lại."
+        }
+      ]
+    },
+    {
+      id: "y-si",
+      artKey: "ysi",
+      title: "Vị Lương Y Giữa Mùa Dịch",
+      tag: "Chương Sáu · Từ Tâm",
+      intro: "Mùa dịch bệnh hoành hành, lương y họ Vương ngày đêm chữa bệnh cứu người. Một gia đình nghèo khó tìm đến xin thuốc cho đứa con nhỏ đang sốt cao nguy kịch, nhưng trong tay không có đủ tiền công.",
+      choices: [
+        {
+          text: "Bốc thuốc cứu chữa ngay, không tính toán tiền công, chỉ mong đứa trẻ qua khỏi.",
+          delta: 9,
+          tone: "good",
+          result: "Đứa trẻ qua cơn nguy kịch. Gia đình nghèo khó ấy về sau làm ăn khá giả, luôn nhắc nhở con cháu ghi nhớ ơn cứu mạng năm xưa. Lương y họ Vương sống đến tuổi bảy mươi vẫn minh mẫn, con cháu nối nghiệp làm thầy thuốc được người đời quý trọng."
+        },
+        {
+          text: "Từ chối chữa trị vì gia đình không đủ tiền, dù trong tay còn thuốc.",
+          delta: -9,
+          tone: "bad",
+          result: "Đứa trẻ trở nặng vì chậm trễ tìm được thầy thuốc khác. Tiếng ông lương y họ Vương từ chối cứu người vì tiền lan truyền khắp vùng, từ đó nhiều người bệnh không còn muốn tìm đến ông nữa dù tay nghề cao."
+        },
+        {
+          text: "Đồng ý chữa trị nhưng ghi nợ lại, buộc gia đình phải trả dần kể cả khi rất khó khăn.",
+          delta: 3,
+          tone: "mixed",
+          result: "Đứa trẻ được cứu sống, nhưng gánh nợ khiến gia đình nghèo càng thêm chật vật nhiều năm sau đó. Ơn cứu mạng và nỗi lo trả nợ cứ đan xen trong lòng họ mỗi khi nhắc đến ông lương y."
+        }
+      ]
+    },
+    {
+      id: "cay-cau",
+      artKey: "caycau",
+      title: "Cây Cầu Gãy Giữa Đêm Đông",
+      tag: "Chương Bảy · Từ Bi",
+      intro: "Đêm đông giá lạnh, chàng tiều phu họ Đặng vội vã trở về làng thì gặp một cụ già mù đang dò dẫm tìm đường qua cây cầu gỗ đã gãy một nhịp ván, phía dưới là dòng suối chảy xiết. Trời tối, đường vắng, không ai khác qua lại.",
+      choices: [
+        { text: "Dừng chân, dắt cụ già đi vòng lối an toàn, dù phải trễ giờ về nhà.", delta: 8, tone: "good", result: "Cụ già cảm tạ rối rít, hóa ra là thầy lang trong vùng từng cứu chữa cho nhiều người. Về sau khi vợ chàng tiều phu ốm nặng, chính cụ già ấy đã hết lòng chữa trị, coi như trả ơn." },
+        { text: "Vội về cho kịp bữa cơm, chỉ nhắc cụ già cẩn thận rồi rảo bước bỏ đi.", delta: -9, tone: "bad", result: "Cụ già trượt chân ngã xuống suối, may có người làng khác cứu kịp. Chuyện đồn ra, dân làng nhìn chàng tiều phu bằng ánh mắt lạnh nhạt vì sự vô tâm ấy." },
+        { text: "Hô hoán gọi người làng đến giúp nhưng bản thân không trực tiếp ở lại.", delta: 2, tone: "mixed", result: "Cụ già được cứu nhờ người khác đến kịp, nhưng chàng tiều phu vẫn áy náy vì đã không tự tay giúp đỡ khi có thể." }
+      ]
+    },
+    {
+      id: "thu-nac-danh",
+      artKey: "thunacdanh",
+      title: "Bức Thư Tố Cáo Giấu Tên",
+      tag: "Chương Tám · Khẩu Nghiệp",
+      intro: "Một sáng nọ, bà Tú nhận được bức thư không đề tên, tố cáo người hàng xóm buôn bán gian dối, ám chỉ luôn cả chuyện đời tư không hay. Tin ấy nếu lan ra sẽ khiến gia đình người hàng xóm mất hết khách hàng và danh dự.",
+      choices: [
+        { text: "Không tin ngay, âm thầm tìm hiểu sự thật trước khi nói với ai.", delta: 8, tone: "good", result: "Hóa ra bức thư do một kẻ ganh ghét dựng chuyện. Nhờ bà Tú không vội tin, gia đình hàng xóm tránh được tai tiếng oan uổng, về sau càng thân thiết, tin cậy nhau hơn." },
+        { text: "Đem chuyện kể lại cho vài người quen để bàn tán cho vui miệng.", delta: -9, tone: "bad", result: "Tin đồn lan nhanh, gia đình hàng xóm mất khách, phải đóng cửa hàng dọn đi nơi khác dù chuyện hoàn toàn bịa đặt. Sau này sự thật sáng tỏ, bà Tú mang tiếng thị phi, người làng cũng dè dặt với bà." },
+        { text: "Không kể lại nhưng vẫn âm thầm dò xét, đối xử dè dặt hơn với người hàng xóm.", delta: -2, tone: "mixed", result: "Không ai bị tổn hại rõ ràng, nhưng mối quan hệ giữa hai nhà trở nên xa cách vì sự nghi kỵ không nói ra." }
+      ]
+    },
+    {
+      id: "can-gian",
+      artKey: "cangian",
+      title: "Cân Gian Trong Chợ Gạo Mùa Đói",
+      tag: "Chương Chín · Thành Tín",
+      intro: "Năm mất mùa, gạo trở nên khan hiếm, người buôn gạo họ Phùng nhận ra chỉ cần chỉnh lại cân một chút là mỗi ngày có thể lời thêm gấp đôi mà khách hàng khó lòng phát hiện giữa lúc hối hả tranh mua.",
+      choices: [
+        { text: "Giữ nguyên cân đúng, thậm chí bán giá thấp hơn cho những nhà quá nghèo.", delta: 9, tone: "good", result: "Tiếng lành đồn xa, người dân khắp vùng đều tìm đến mua gạo của họ Phùng vì tin tưởng. Qua cơn đói kém, cửa hàng của ông trở thành nơi buôn bán lớn nhất vùng, được kính trọng nhiều đời." },
+        { text: "Chỉnh cân gian lận để thu lợi nhiều hơn trong lúc gạo khan hiếm.", delta: -10, tone: "bad", result: "Ít lâu sau có người phát hiện cân thiếu, tin dữ lan khắp chợ. Người dân đói khổ oán trách, cửa hàng bị tẩy chay, họ Phùng phải bỏ nghề vì không ai còn tin tưởng mua bán." },
+        { text: "Không gian lận cân nhưng âm thầm tăng giá cao hơn mức cần thiết.", delta: 2, tone: "mixed", result: "Ông vẫn giữ được chữ tín về cân đo, nhưng giá cao khiến nhiều gia đình nghèo không đủ tiền mua, lòng người dân đối với ông cũng chỉ vừa đủ, không mấy mặn mà." }
+      ]
+    },
+    {
+      id: "tre-lac",
+      artKey: "trelac",
+      title: "Đứa Trẻ Lạc Giữa Phiên Chợ Tết",
+      tag: "Chương Mười · Nhân Ái",
+      intro: "Phiên chợ Tết đông đúc, một đứa bé chừng năm tuổi đứng khóc giữa dòng người vì lạc mất cha mẹ. Trời sắp tối, chợ dần vãn người, không ai buồn để ý đến đứa trẻ nhỏ bé giữa đám đông hối hả.",
+      choices: [
+        { text: "Dừng lại dỗ dành đứa bé, dẫn đi tìm cha mẹ đến khi gặp mới thôi.", delta: 8, tone: "good", result: "Sau nhiều giờ tìm kiếm, cha mẹ đứa bé mừng rỡ tìm lại được con. Họ hóa ra là chủ một xưởng dệt lớn trong vùng, từ đó thường xuyên giúp đỡ khi gia đình người tốt bụng gặp khó khăn." },
+        { text: "Ngại phiền phức, bước nhanh qua vì nghĩ sẽ có người khác lo việc đó.", delta: -8, tone: "bad", result: "Đứa trẻ lang thang đến tối mịt mới được một người khác tìm thấy trong tình trạng hoảng loạn. Câu chuyện lan truyền, ai nấy đều trách những người đã thờ ơ đi ngang qua mà không giúp." },
+        { text: "Chỉ đứng lại hỏi han vài câu rồi nhờ người bán hàng gần đó trông hộ.", delta: 2, tone: "mixed", result: "Đứa bé cuối cùng cũng được tìm thấy gia đình nhờ người bán hàng tốt bụng, nhưng phần công lao ấy không thuộc về mình vì đã không trực tiếp ở lại giúp đến cùng." }
+      ]
+    },
+    {
+      id: "no-anh-em",
+      artKey: "noanhem",
+      title: "Món Nợ Của Người Anh Kết Nghĩa",
+      tag: "Chương Mười Một · Khoan Dung",
+      intro: "Người anh kết nghĩa của ông Bình vay một khoản tiền lớn để chữa bệnh cho con, hẹn ngày trả nhưng đến hạn vẫn chưa xoay xở được vì gia cảnh sa sút. Ông Bình cũng đang cần tiền gấp để mở rộng việc buôn bán.",
+      choices: [
+        { text: "Chủ động xóa bớt một phần nợ, cho anh kết nghĩa thêm thời gian trả dần.", delta: 7, tone: "good", result: "Người anh kết nghĩa cảm kích vô cùng, sau khi gượng dậy đã tận tâm giúp đỡ ngược lại việc buôn bán của ông Bình bằng các mối quan hệ quý giá, tình nghĩa anh em càng thêm bền chặt." },
+        { text: "Đòi nợ gắt gao, dọa đưa ra quan phủ nếu không trả đúng hạn.", delta: -8, tone: "bad", result: "Người anh kết nghĩa phải bán nhà cửa để trả nợ, tình nghĩa anh em từ đó đứt đoạn. Người trong họ hàng nhìn ông Bình với ánh mắt dè chừng vì sự tuyệt tình ấy." },
+        { text: "Cho khất nợ nhưng vẫn tính thêm lãi vì thời gian chờ đợi.", delta: 1, tone: "mixed", result: "Người anh kết nghĩa trả được nợ nhưng phải gồng gánh thêm phần lãi phát sinh, tình cảm giữa hai người tuy không đứt hẳn nhưng cũng nhạt đi nhiều." }
+      ]
+    },
+    {
+      id: "chim-se",
+      artKey: "chimse",
+      title: "Chim Sẻ Mắc Lưới Bên Hiên Nhà",
+      tag: "Chương Mười Hai · Phóng Sinh",
+      intro: "Sáng sớm, cậu bé họ Kỷ phát hiện một con chim sẻ mắc vào tấm lưới giăng bắt chim ở hiên nhà, đang giãy giụa kêu inh ỏi. Mấy đứa trẻ hàng xóm chạy đến, đứa thì đòi bắt nướng ăn, đứa thì đòi đem bán.",
+      choices: [
+        { text: "Gỡ lưới, thả chim sẻ bay đi, dù bị bạn bè trêu chọc là dại dột.", delta: 6, tone: "good", result: "Vài hôm sau, chính con chim sẻ ấy làm tổ trong vườn nhà cậu bé, bắt sâu bảo vệ mùa màng. Cậu bé lớn lên vẫn giữ thói quen thương yêu loài vật, được người làng quý mến gọi là người có tấm lòng nhân hậu." },
+        { text: "Bắt con chim đem bán cho người ta làm thịt để kiếm ít tiền tiêu vặt.", delta: -6, tone: "bad", result: "Cậu bé có được ít tiền nhưng lòng không thấy vui, cứ nghĩ đến tiếng kêu thảm thiết của con chim. Từ đó những đứa trẻ trong xóm cũng dần xa lánh vì thấy cậu quá nhẫn tâm." },
+        { text: "Không bắt cũng không thả, chỉ đứng nhìn rồi bỏ đi nơi khác chơi.", delta: 1, tone: "mixed", result: "Con chim cuối cùng cũng tự vùng thoát được nhưng bị thương ở cánh. Cậu bé về sau cứ áy náy mãi vì đã không ra tay giúp khi có thể." }
+      ]
+    },
+    {
+      id: "loi-the",
+      artKey: "loithe",
+      title: "Lời Thề Dưới Gốc Đa Già",
+      tag: "Chương Mười Ba · Giữ Chữ Tín",
+      intro: "Nhiều năm trước, ông Khiêm cùng người bạn thân thề dưới gốc đa đầu làng sẽ cùng nhau góp vốn mở xưởng nhuộm vải khi có điều kiện. Nay cơ hội đến, nhưng có một mối làm ăn khác hời hơn nhiều đang mời gọi ông một mình đứng ra làm riêng.",
+      choices: [
+        { text: "Giữ đúng lời thề xưa, cùng bạn cũ góp vốn mở xưởng nhuộm như đã hứa.", delta: 7, tone: "good", result: "Xưởng nhuộm của hai người dần ăn nên làm ra nhờ sự tin tưởng lẫn nhau. Tiếng tăm về chữ tín của ông Khiêm khiến nhiều mối làm ăn lớn sau này đều tìm đến ông trước tiên." },
+        { text: "Bỏ lời thề cũ, nhận lời làm ăn riêng vì thấy có lợi hơn nhiều.", delta: -8, tone: "bad", result: "Người bạn cũ biết chuyện, buồn bã và mất lòng tin. Mối làm ăn mới của ông Khiêm cũng gặp trục trặc vì đối tác mới phát hiện ông từng bội ước với bạn thân, không dám tin tưởng giao việc lớn." },
+        { text: "Nhận cả hai việc, vừa góp vốn với bạn vừa âm thầm làm thêm mối riêng.", delta: -1, tone: "mixed", result: "Cả hai việc đều không được chăm chút trọn vẹn, xưởng nhuộm với bạn cũ tiến triển chậm chạp, còn mối làm ăn riêng cũng không như ý, tình bạn cũng dần nhạt phai vì sự chia lòng ấy." }
+      ]
+    },
+    {
+      id: "khach-tro-ngheo",
+      artKey: "khachtrongheo",
+      title: "Vị Khách Trọ Không Một Đồng",
+      tag: "Chương Mười Bốn · Bố Thí",
+      intro: "Một đêm mưa gió, chàng học trò nghèo tìm đến quán trọ của bà Lài xin nghỉ chân, thú thật rằng mình không còn một đồng nào vì đã dốc hết lộ phí cho việc học. Quán trọ vốn đã ít khách, bà Lài đang phải chật vật xoay xở tiền thuê nhà.",
+      choices: [
+        { text: "Cho chàng học trò trọ lại, thết đãi cơm nước mà không đòi hỏi trả tiền.", delta: 8, tone: "good", result: "Nhiều năm sau, chàng học trò đỗ đạt làm quan, không quên ơn xưa, thường xuyên ghé thăm và giúp đỡ quán trọ của bà Lài mỗi khi có dịp qua vùng, tiếng thơm về lòng tốt của bà lan xa." },
+        { text: "Từ chối thẳng thừng vì bản thân cũng đang khó khăn, không thể lo cho ai khác.", delta: -8, tone: "bad", result: "Chàng học trò phải lang thang trong mưa tìm chỗ trọ khác, suýt ốm nặng. Về sau khi đã thành đạt, mỗi khi có dịp ông đều tránh xa quán trọ của bà Lài, tiếng đồn về sự lạnh lùng của bà cũng khiến khách vãng lai thưa dần." },
+        { text: "Cho trọ lại nhưng ghi sổ nợ, buộc phải quay lại trả đủ tiền phòng sau này.", delta: 2, tone: "mixed", result: "Chàng học trò biết ơn vì được giúp qua cơn hoạn nạn, nhưng vẫn cảm thấy chút chạnh lòng vì sự tính toán rạch ròi ấy, mối ân tình vì thế cũng nhạt hơn." }
+      ]
+    },
+    {
+      id: "binh-phong",
+      artKey: "binhphong",
+      title: "Bức Bình Phong Của Người Giàu Mới",
+      tag: "Chương Mười Lăm · Khiêm Nhường",
+      intro: "Nhờ buôn bán phát đạt, ông Cả Tôn dựng được căn nhà lớn nhất làng, cho đặt bức bình phong chạm trổ tinh xảo ngay cổng vào. Những người hàng xóm nghèo khó năm xưa từng giúp đỡ gia đình ông lúc khốn khó nay đến thăm, ngập ngừng trước cổng nhà sang trọng.",
+      choices: [
+        { text: "Niềm nở mời họ vào nhà, nhắc lại chuyện xưa với lòng biết ơn chân thành.", delta: 7, tone: "good", result: "Xóm giềng cảm động trước sự khiêm nhường của ông Cả Tôn dù đã giàu có. Việc buôn bán của ông càng thêm thuận lợi nhờ được lòng người, con cháu ông sau này cũng được quý mến vì gia phong nền nã." },
+        { text: "Sai người ở ra tiếp qua loa, ý bảo họ không cần lui tới nhà mình nữa.", delta: -7, tone: "bad", result: "Xóm giềng buồn lòng, những mối quan hệ cũ dần đứt đoạn. Khi việc buôn bán của ông Cả Tôn gặp khó khăn về sau, không một ai trong làng đứng ra giúp đỡ như ông từng được giúp khi xưa." },
+        { text: "Vẫn tiếp đón nhưng luôn nhắc khéo về địa vị hiện tại của mình trong câu chuyện.", delta: 1, tone: "mixed", result: "Xóm giềng vẫn giữ lễ độ nhưng trong lòng có phần dè dặt, không còn thân tình như trước, cảm giác khoảng cách giàu nghèo cứ hiện rõ trong từng câu nói." }
+      ]
+    },
+    {
+      id: "oan-nguoi-o",
+      artKey: "oannguoio",
+      title: "Oan Ức Của Người Ở Trong Nhà",
+      tag: "Chương Mười Sáu · Công Bằng",
+      intro: "Trong nhà ông bà Hội Đồng mất một món trang sức quý, nghi ngờ đổ dồn lên cô hầu gái mới vào làm việc chưa lâu. Không có bằng chứng rõ ràng, nhưng để giữ thể diện, việc trừng phạt ngay lập tức sẽ dễ dàng hơn nhiều so với điều tra kỹ lưỡng.",
+      choices: [
+        { text: "Kiên nhẫn tìm hiểu kỹ càng trước khi kết luận, không vội trừng phạt ai.", delta: 8, tone: "good", result: "Cuối cùng phát hiện món trang sức bị rơi vào khe tủ chứ không hề mất. Cô hầu gái được minh oan, càng thêm tận tụy trung thành với gia đình, tiếng tăm công bằng của ông bà Hội Đồng cũng được người ở quý trọng." },
+        { text: "Trừng phạt cô hầu gái ngay để răn đe những người khác trong nhà.", delta: -9, tone: "bad", result: "Cô hầu gái bị oan phải rời đi trong tủi nhục. Về sau khi tìm lại được món đồ, ông bà Hội Đồng day dứt mãi vì đã đối xử bất công, tiếng xấu về sự hà khắc cũng khiến khó tìm được người ở tốt về sau." },
+        { text: "Không trừng phạt nặng nhưng vẫn đối xử lạnh nhạt, nghi kỵ với cô hầu gái.", delta: 1, tone: "mixed", result: "Dù không bị phạt oan, cô hầu gái vẫn cảm thấy tủi thân vì sự nghi ngờ không rõ ràng, làm việc trong nhà từ đó luôn dè dặt, không còn hết lòng như trước." }
+      ]
+    },
+    {
+      id: "mua-lu",
+      artKey: "mualu",
+      title: "Mưa Lũ Cuốn Trôi Mùa Màng",
+      tag: "Chương Mười Bảy · Rộng Lượng",
+      intro: "Trận lũ lớn cuốn trôi gần hết ruộng lúa của các tá điền thuê đất nhà ông Hương Cả. Đến kỳ thu tô, các tá điền lo lắng không biết lấy đâu ra thóc để nộp, trong khi ông Hương Cả cũng cần tiền để trang trải việc nhà.",
+      choices: [
+        { text: "Miễn giảm phần lớn tô thuế năm đó, để tá điền có cái ăn qua mùa giáp hạt.", delta: 8, tone: "good", result: "Các tá điền cảm kích, ra sức cày cấy chăm chỉ hơn những mùa sau để đền ơn. Ruộng đất nhà ông Hương Cả nhờ vậy luôn được chăm sóc tốt, thóc lúa những năm sau lại càng dồi dào hơn trước." },
+        { text: "Vẫn đòi thu tô đầy đủ như đã định, mặc kệ hoàn cảnh mất mùa của tá điền.", delta: -8, tone: "bad", result: "Nhiều tá điền phải bán con trâu cày để nộp đủ tô, oán thán ông Hương Cả khắp vùng. Mùa sau, ruộng đất bị bỏ bê vì không ai còn tha thiết làm việc cho một địa chủ hà khắc như vậy." },
+        { text: "Giảm tô một phần nhỏ, không đáng kể so với thiệt hại thực tế.", delta: 1, tone: "mixed", result: "Tá điền có phần nhẹ nhõm hơn đôi chút nhưng vẫn phải chật vật xoay xở, lòng biết ơn dành cho ông Hương Cả cũng chỉ ở mức vừa phải." }
+      ]
+    },
+    {
+      id: "tieng-dan",
+      artKey: "tiengdan",
+      title: "Tiếng Đàn Giữa Đêm Trăng",
+      tag: "Chương Mười Tám · Chính Trực",
+      intro: "Người nhạc công tài hoa họ Lư được một vị quan mời đến đàn hát trong buổi tiệc riêng, nhưng khi đến nơi mới hay đó là buổi tiệc ăn mừng sau khi vị quan ép dân nghèo phải nộp thêm sưu thuế trái phép. Tiền công hậu hĩnh đã được đưa trước.",
+      choices: [
+        { text: "Từ chối đàn hát, trả lại tiền công dù biết có thể mất lòng vị quan quyền thế.", delta: 7, tone: "good", result: "Vị quan tức giận nhưng không dám làm gì quá đáng vì sợ tai tiếng lan xa. Người nhạc công họ Lư được dân chúng trong vùng cảm phục, danh tiếng về khí tiết của ông càng vang xa, nhiều nhà quyền quý chân chính tìm đến mời ông biểu diễn." },
+        { text: "Vẫn đàn hát trọn buổi tiệc, xem đó chỉ là công việc kiếm sống bình thường.", delta: -8, tone: "bad", result: "Sau này khi vị quan bị triều đình cách chức vì tội tham nhũng, người nhạc công họ Lư cũng bị liên lụy tiếng xấu vì từng góp vui trong buổi tiệc ăn mừng trên xương máu dân nghèo." },
+        { text: "Đàn qua loa cho xong việc rồi cáo bệnh xin về sớm.", delta: -1, tone: "mixed", result: "Ông tránh được phần nào tiếng xấu vì rời đi sớm, nhưng trong lòng vẫn không thấy thanh thản vì đã miễn cưỡng góp mặt trong một việc mà mình không tán thành." }
+      ]
+    },
+    {
+      id: "chuyen-do",
+      artKey: "chuyendo",
+      title: "Chuyến Đò Giữa Cơn Giông",
+      tag: "Chương Mười Chín · Nghĩa Hiệp",
+      intro: "Người lái đò họ Kha đang chèo chuyến cuối cùng trong ngày thì giông tố nổi lên giữa sông. Trên bờ, một người khách lỡ đường vẫy gọi xin quá giang gấp vì có việc nhà cấp bách, nhưng chuyến đi thêm này rất nguy hiểm giữa sóng gió.",
+      choices: [
+        { text: "Liều mình quay thuyền lại đón khách, cẩn thận chèo chống vượt qua cơn giông.", delta: 8, tone: "good", result: "Cả hai đều bình an cập bến. Hóa ra người khách ấy về kịp lo đám tang cho cha già trước khi liệm, mang ơn người lái đò suốt đời. Về sau người lái đò họ Kha luôn được dân trong vùng quý trọng vì tấm lòng nghĩa hiệp." },
+        { text: "Từ chối vì sợ nguy hiểm, để mặc người khách đứng chờ trên bờ trong giông bão.", delta: -7, tone: "bad", result: "Người khách phải chờ đến sáng hôm sau mới qua được sông, lỡ mất việc hệ trọng của gia đình, trong lòng luôn oán trách sự nhẫn tâm của người lái đò. Tiếng đồn ấy khiến ít người còn muốn đi đò của ông họ Kha." },
+        { text: "Đồng ý chở nhưng đòi thêm tiền công gấp nhiều lần vì hoàn cảnh nguy hiểm.", delta: 1, tone: "mixed", result: "Người khách đành chấp nhận trả thêm tiền để qua sông kịp việc, tuy được giúp nhưng trong lòng không khỏi chạnh lòng vì sự tính toán giữa lúc hoạn nạn." }
+      ]
+    },
+    {
+      id: "dich-benh-xom",
+      artKey: "dichbenhxom",
+      title: "Cơn Bệnh Lạ Trong Xóm Nhỏ",
+      tag: "Chương Hai Mươi · Sẻ Chia",
+      intro: "Một gia đình trong xóm có người mắc phải cơn bệnh lạ, sốt cao li bì khiến nhiều người lo sợ lây lan mà không dám lại gần. Nhà ấy vốn neo người, không ai phụ giúp việc cơm nước, thuốc thang trong những ngày bệnh nặng nhất.",
+      choices: [
+        { text: "Vẫn đến thăm hỏi, phụ giúp cơm nước từ xa một cách cẩn thận, động viên gia đình đừng hoảng sợ.", delta: 8, tone: "good", result: "Nhờ được chăm sóc kịp thời và tinh thần vững vàng, người bệnh dần bình phục. Cả xóm cảm phục tấm lòng không ngại hiểm nguy ấy, từ đó tình làng nghĩa xóm càng thêm gắn bó." },
+        { text: "Tránh xa hẳn, thậm chí bàn tán khiến gia đình ấy càng thêm cô lập giữa xóm làng.", delta: -8, tone: "bad", result: "Gia đình người bệnh chới với không ai giúp đỡ, tình cảnh càng thêm bi đát. Sau khi mọi chuyện qua đi, họ ghi nhớ rất rõ ai đã ngoảnh mặt làm ngơ lúc hoạn nạn, tình làng nghĩa xóm sứt mẻ nhiều năm." },
+        { text: "Chỉ đứng xa hỏi thăm qua loa, không dám giúp đỡ trực tiếp việc gì.", delta: 1, tone: "mixed", result: "Gia đình ấy cũng cảm kích đôi chút vì còn có người hỏi thăm, nhưng vẫn phải tự xoay xở một mình trong những ngày khó khăn nhất." }
+      ]
+    },
+    {
+      id: "ke-trom-doi",
+      artKey: "ketromdoi",
+      title: "Kẻ Trộm Bị Bắt Quả Tang Vì Đói",
+      tag: "Chương Hai Mươi Mốt · Độ Lượng",
+      intro: "Chủ tiệm tạp hóa họ Diệp bắt quả tang một người đàn ông gầy gò đang giấu vội nắm gạo trong áo. Tra hỏi mới biết nhà anh ta ba ngày chưa có gì bỏ bụng, đứa con nhỏ đang ốm liệt giường.",
+      choices: [
+        { text: "Không truy cứu, còn cho thêm ít gạo và thuốc men để lo cho đứa trẻ.", delta: 7, tone: "good", result: "Người đàn ông cảm động, sau này làm ăn khấm khá đã quay lại trả ơn gấp bội, còn giới thiệu nhiều khách hàng đến tiệm tạp hóa của ông Diệp, tiếng thơm về lòng độ lượng của ông lan khắp vùng." },
+        { text: "Giao ngay cho lính tuần tra để làm gương, không cần biết lý do.", delta: -8, tone: "bad", result: "Người đàn ông bị đánh đập, giam giữ, đứa con ở nhà không ai chăm sóc trở bệnh nặng hơn. Dân trong vùng biết chuyện đều thầm trách ông Diệp quá nhẫn tâm với người cùng khổ." },
+        { text: "Chỉ mắng cho một trận rồi đuổi đi, không lấy lại gạo cũng không giúp gì thêm.", delta: 1, tone: "mixed", result: "Người đàn ông thoát được tội nhưng vẫn về tay không, đứa con ở nhà vẫn tiếp tục đói khát. Ông Diệp cũng thấy lòng không yên dù đã không làm gì quá đáng." }
+      ]
+    },
+    {
+      id: "thay-do",
+      artKey: "thaydo",
+      title: "Danh Tiếng Của Người Thầy Đồ",
+      tag: "Chương Hai Mươi Hai · Chí Công",
+      intro: "Thầy đồ họ Ôn dạy học trong làng, có hai học trò cùng dự kỳ khảo hạch: một là con nhà giàu học kém nhưng cha mẹ đã biếu thầy lễ vật hậu hĩnh, một là con nhà nghèo học giỏi nhưng chẳng có gì đáp lễ.",
+      choices: [
+        { text: "Chấm điểm công tâm theo đúng thực lực, không vì lễ vật mà thiên vị.", delta: 8, tone: "good", result: "Trò nghèo học giỏi được thầy tiến cử lên trường lớn, sau này đỗ đạt làm rạng danh thầy trò. Danh tiếng chính trực của thầy đồ họ Ôn khiến nhiều gia đình trong vùng đều muốn gửi con đến học." },
+        { text: "Cho điểm cao hơn thực lực của trò con nhà giàu để giữ mối quan hệ tốt đẹp.", delta: -8, tone: "bad", result: "Sự việc dần bị phát hiện khi trò con nhà giàu thi rớt kỳ thi lớn vì học lực yếu kém. Thầy đồ họ Ôn mất hết uy tín, học trò lần lượt xin nghỉ học, danh tiếng bao năm gây dựng sụp đổ." },
+        { text: "Chấm điểm gần đúng thực lực nhưng vẫn thiên vị đôi chút cho trò con nhà giàu.", delta: -1, tone: "mixed", result: "Không ai phát hiện ra sự thiên vị nhỏ ấy, nhưng thầy đồ họ Ôn tự biết trong lòng mình đã không còn giữ trọn sự công tâm như trước." }
+      ]
+    },
+    {
+      id: "hoi-mon",
+      artKey: "hoimon",
+      title: "Của Hồi Môn Và Lòng Tham",
+      tag: "Chương Hai Mươi Ba · Tri Túc",
+      intro: "Khi em gái đi lấy chồng, ông Toàn được cha mẹ giao đứng ra lo liệu của hồi môn. Ông nhận ra nếu bớt xén một phần tài sản đáng lẽ thuộc về em gái, không ai trong họ hàng có thể biết được vì ông là người nắm giữ sổ sách.",
+      choices: [
+        { text: "Giao đầy đủ, minh bạch mọi tài sản của hồi môn cho em gái theo đúng ý cha mẹ.", delta: 8, tone: "good", result: "Em gái về nhà chồng đủ đầy, gia đình hai bên đều quý trọng sự ngay thẳng của ông Toàn. Về sau khi ông gặp khó khăn trong làm ăn, chính em gái và nhà chồng cô đã hết lòng giúp đỡ lại." },
+        { text: "Âm thầm giữ lại một phần tài sản cho riêng mình trước khi giao của hồi môn.", delta: -8, tone: "bad", result: "Nhiều năm sau sổ sách cũ vô tình bị lật lại, sự việc bị phát hiện. Em gái oán trách, họ hàng xa lánh, ông Toàn mang tiếng tham lam với chính em ruột của mình đến cuối đời." },
+        { text: "Giữ lại một phần nhỏ, tự nhủ đó là công sức đứng ra lo liệu bấy lâu.", delta: -2, tone: "mixed", result: "Không ai phát hiện ra phần thiếu hụt nhỏ ấy, nhưng ông Toàn không tránh khỏi cảm giác áy náy mỗi khi nhìn em gái sống yên ổn mà không hay biết gì." }
+      ]
+    },
+    {
+      id: "tuong-co",
+      artKey: "tuongco",
+      title: "Pho Tượng Cổ Trong Miếu Hoang",
+      tag: "Chương Hai Mươi Bốn · Vô Tham",
+      intro: "Trong một chuyến đi rừng tìm củi, ông Tiến tình cờ phát hiện một pho tượng cổ bằng đồng quý giá trong ngôi miếu hoang phế đã lâu không ai lui tới, hẳn có thể bán được số tiền lớn nếu đem về kín đáo.",
+      choices: [
+        { text: "Báo lại cho những người cao tuổi trong làng để cùng nhau trùng tu lại ngôi miếu, trả pho tượng về đúng chỗ.", delta: 7, tone: "good", result: "Ngôi miếu được dân làng góp công góp của trùng tu khang trang, trở thành nơi thờ cúng chung được nhiều đời con cháu gìn giữ. Ông Tiến được cả làng nhắc đến như người có công lớn, dù không giữ lại chút lợi riêng nào." },
+        { text: "Âm thầm mang pho tượng về bán cho lái buôn đồ cổ ở tỉnh xa.", delta: -8, tone: "bad", result: "Số tiền bán được chẳng mấy chốc tiêu tán vì làm ăn thua lỗ. Ít lâu sau có người phát hiện dấu vết dẫn về nhà ông Tiến, tiếng đồn về việc lấy trộm đồ thờ tự khiến cả nhà mang tiếng xấu khó gột rửa." },
+        { text: "Giữ pho tượng lại nhà thờ cúng riêng, không báo cho ai trong làng biết.", delta: -2, tone: "mixed", result: "Ông Tiến không mang tội bán đồ thờ tự, nhưng việc tự ý giữ lại của chung khiến khi sự việc lộ ra, dân làng cũng không khỏi dị nghị về lòng tham kín đáo của ông." }
+      ]
+    },
+    {
+      id: "hang-xom-ganh-ghet",
+      artKey: "hangxomganhghet",
+      title: "Người Hàng Xóm Ganh Ghét",
+      tag: "Chương Hai Mươi Lăm · Nhẫn Nhịn",
+      intro: "Việc buôn bán của bà Nhàn ngày càng phát đạt khiến người hàng xóm vốn cùng nghề sinh lòng ganh ghét, thường xuyên nói xấu, thậm chí tìm cách phá đám mỗi khi bà có khách quý ghé thăm.",
+      choices: [
+        { text: "Vẫn giữ thái độ ôn hòa, không đôi co, thỉnh thoảng còn giúp đỡ khi người hàng xóm gặp khó khăn.", delta: 7, tone: "good", result: "Người hàng xóm dần cảm thấy hổ thẹn trước sự độ lượng ấy, thôi hẳn thói ganh ghét, hai nhà về sau còn hợp tác làm ăn cùng có lợi. Tiếng tăm về sự nhã nhặn của bà Nhàn càng khiến khách hàng tin tưởng hơn." },
+        { text: "Đáp trả bằng những lời lẽ cay nghiệt không kém, hai bên cãi vã trước mặt khách hàng.", delta: -7, tone: "bad", result: "Cả hai nhà đều mang tiếng xấu vì thói ganh đua chợ búa, khách hàng dần e ngại lui tới cả hai bên. Việc buôn bán của bà Nhàn cũng sa sút theo vì tiếng đồn không hay." },
+        { text: "Không đôi co trước mặt nhưng âm thầm nói xấu lại sau lưng cho hả giận.", delta: -1, tone: "mixed", result: "Không xảy ra xung đột công khai nào, nhưng những lời nói xấu qua lại vẫn đến tai nhiều người, khiến cả hai nhà đều mất đi phần nào thiện cảm của xóm giềng." }
+      ]
+    },
+    {
+      id: "bao-cuoi-thu",
+      artKey: "baocuoithu",
+      title: "Cơn Bão Cuối Mùa Thu",
+      tag: "Chương Hai Mươi Sáu · Tương Trợ",
+      intro: "Một cơn bão lớn cuối mùa thu đánh dạt một chiếc thuyền buôn xa lạ vào bờ biển làng chài, thủy thủ đoàn đói lả, thuyền hư hỏng nặng không còn lương thực. Kho lương của làng cũng chỉ vừa đủ dùng qua mùa giáp hạt sắp tới.",
+      choices: [
+        { text: "Họp dân làng cùng góp một phần lương thực nhỏ để giúp đoàn thủy thủ qua cơn hoạn nạn.", delta: 8, tone: "good", result: "Đoàn thủy thủ được cứu sống, sau này quay lại buôn bán mang theo nhiều sản vật quý báu để tạ ơn cả làng. Từ đó làng chài có thêm một mối giao thương lâu dài, đời sống dân làng cũng khá giả hơn trước." },
+        { text: "Từ chối chia sẻ vì lo lắng lương thực của làng không đủ dùng cho mùa giáp hạt.", delta: -7, tone: "bad", result: "Đoàn thủy thủ phải lay lắt tự xoay xở, một vài người không qua khỏi vì đói và lạnh. Câu chuyện về sự thờ ơ của làng chài lan truyền trong giới đi biển, từ đó ít thuyền buôn nào còn dám ghé qua neo đậu." },
+        { text: "Chỉ giúp đỡ qua loa vừa đủ để tránh tiếng ác, không thực tâm sẻ chia.", delta: 1, tone: "mixed", result: "Đoàn thủy thủ cũng cầm cự qua được, nhưng nhận ra sự giúp đỡ chỉ mang tính hình thức, khi rời đi không mấy thiện cảm với làng chài, không hẹn ngày trở lại." }
+      ]
+    }
+  ];
+
+  // ---------------- ILLUSTRATION ENGINE ----------------
+  // Soft painterly scenes: gradient sky, glowing sun/moon, two hill silhouette
+  // layers, hand-placed foreground shapes. Built once per screen, ids are
+  // namespaced per instance so several can appear on one page (chapter grid).
+  var HILL_BACK  = "M0,192 C110,150 205,172 320,158 C425,146 500,168 640,150 L640,300 L0,300 Z";
+  var HILL_FRONT = "M0,232 C100,202 215,218 340,196 C460,178 555,206 640,190 L640,300 L0,300 Z";
+
+  var artSeq = 0;
+  function svgScene(opts) {
+    artSeq += 1;
+    var id = "art" + artSeq;
+    var stars = "";
+    if (opts.stars) {
+      var pts = [[46,40],[92,78],[150,34],[210,62],[268,26],[330,54],[400,32],[470,60],[540,38],[590,70],[70,110],[250,96],[420,100]];
+      stars = pts.map(function(p, i){
+        var r = (i % 3 === 0) ? 1.6 : 1;
+        return '<circle cx="' + p[0] + '" cy="' + p[1] + '" r="' + r + '" fill="#F6EEDF" opacity="' + (0.5 + (i % 4) * 0.12) + '"/>';
+      }).join("");
+    }
+    var rain = "";
+    if (opts.rain) {
+      var lines = [];
+      for (var i = 0; i < 26; i++) {
+        var x = (i * 27 + (i % 2) * 11) % 660 - 10;
+        var y1 = (i * 37) % 260;
+        lines.push('<line x1="' + x + '" y1="' + y1 + '" x2="' + (x - 14) + '" y2="' + (y1 + 26) + '" stroke="#CFE0E8" stroke-width="1.4" opacity="0.35"/>');
+      }
+      rain = lines.join("");
+    }
+    return (
+      '<svg viewBox="0 0 640 300" class="scene-art" preserveAspectRatio="xMidYMid slice" role="img" aria-label="' + (opts.alt || "") + '">' +
+        '<defs>' +
+          '<linearGradient id="sky' + id + '" x1="0" y1="0" x2="0" y2="1">' +
+            '<stop offset="0%" stop-color="' + opts.sky[0] + '"/>' +
+            '<stop offset="55%" stop-color="' + opts.sky[1] + '"/>' +
+            '<stop offset="100%" stop-color="' + opts.sky[2] + '"/>' +
+          '</linearGradient>' +
+          '<radialGradient id="glow' + id + '" cx="50%" cy="50%" r="50%">' +
+            '<stop offset="0%" stop-color="' + opts.glow.color + '" stop-opacity="0.95"/>' +
+            '<stop offset="60%" stop-color="' + opts.glow.color + '" stop-opacity="0.25"/>' +
+            '<stop offset="100%" stop-color="' + opts.glow.color + '" stop-opacity="0"/>' +
+          '</radialGradient>' +
+        '</defs>' +
+        '<rect width="640" height="300" fill="url(#sky' + id + ')"/>' +
+        '<circle cx="' + opts.glow.x + '" cy="' + opts.glow.y + '" r="' + opts.glow.r + '" fill="url(#glow' + id + ')"/>' +
+        '<circle cx="' + opts.glow.x + '" cy="' + opts.glow.y + '" r="' + (opts.glow.r * 0.32) + '" fill="' + opts.glow.color + '" opacity="0.9"/>' +
+        stars +
+        '<path d="' + HILL_BACK + '" fill="' + opts.hillBack + '"/>' +
+        (opts.extraMid || "") +
+        '<path d="' + HILL_FRONT + '" fill="' + opts.hillFront + '"/>' +
+        (opts.extra || "") +
+        rain +
+      '</svg>'
+    );
+  }
+
+  function lantern(x, y, color) {
+    return '<ellipse cx="' + x + '" cy="' + y + '" rx="7" ry="9" fill="' + color + '" opacity="0.95"/>' +
+           '<line x1="' + x + '" y1="' + (y - 9) + '" x2="' + x + '" y2="' + (y - 20) + '" stroke="#2A241C" stroke-width="1.4"/>';
+  }
+  function birdV(x, y, scale) {
+    scale = scale || 1;
+    return '<path d="M' + x + ',' + y + ' q' + (6*scale) + ',-6 ' + (12*scale) + ',0 q' + (6*scale) + ',-6 ' + (12*scale) + ',0" stroke="#2A241C" stroke-width="1.6" fill="none" opacity="0.55"/>';
+  }
+  function houseSil(cx, baseY, w, h, roof, wall) {
+    var hw = w / 2;
+    return '<polygon points="' + (cx-hw) + ',' + baseY + ' ' + (cx-hw) + ',' + (baseY-h) + ' ' + cx + ',' + (baseY-h-40) + ' ' + (cx+hw) + ',' + (baseY-h) + ' ' + (cx+hw) + ',' + baseY + '" fill="' + wall + '"/>' +
+           '<polygon points="' + (cx-hw-6) + ',' + (baseY-h) + ' ' + cx + ',' + (baseY-h-40) + ' ' + (cx+hw+6) + ',' + (baseY-h) + ' ' + cx + ',' + (baseY-h-24) + '" fill="' + roof + '"/>';
+  }
+  function treeSil(cx, baseY, trunkH, canopyR, color) {
+    return '<line x1="' + cx + '" y1="' + baseY + '" x2="' + cx + '" y2="' + (baseY-trunkH) + '" stroke="#2A1D12" stroke-width="6"/>' +
+           '<circle cx="' + cx + '" cy="' + (baseY-trunkH-canopyR*0.6) + '" r="' + canopyR + '" fill="' + color + '"/>';
+  }
+  function bridgeSil(cx, y, w) {
+    var hw = w / 2;
+    return '<path d="M' + (cx-hw) + ',' + (y+20) + ' Q' + cx + ',' + (y-30) + ' ' + (cx+hw) + ',' + (y+20) + ' L' + (cx+hw) + ',' + (y+30) + ' Q' + cx + ',' + (y-16) + ' ' + (cx-hw) + ',' + (y+30) + ' Z" fill="#20160E"/>';
+  }
+  function boatSil(cx, y, w) {
+    var hw = w / 2;
+    return '<path d="M' + (cx-hw) + ',' + y + ' Q' + cx + ',' + (y+18) + ' ' + (cx+hw) + ',' + y + ' L' + (cx+hw-10) + ',' + (y-6) + ' L' + (cx-hw+10) + ',' + (y-6) + ' Z" fill="#1C130C"/>' +
+           '<line x1="' + cx + '" y1="' + (y-6) + '" x2="' + cx + '" y2="' + (y-40) + '" stroke="#1C130C" stroke-width="3"/>';
+  }
+  function tableSil(cx, baseY, w) {
+    var hw = w / 2;
+    return '<rect x="' + (cx-hw) + '" y="' + (baseY-10) + '" width="' + w + '" height="10" fill="#20160E"/>' +
+           '<line x1="' + (cx-hw+6) + '" y1="' + baseY + '" x2="' + (cx-hw+6) + '" y2="' + (baseY-10) + '" stroke="#20160E" stroke-width="4"/>' +
+           '<line x1="' + (cx+hw-6) + '" y1="' + baseY + '" x2="' + (cx+hw-6) + '" y2="' + (baseY-10) + '" stroke="#20160E" stroke-width="4"/>';
+  }
+  function waterBand(y) {
+    return '<rect x="0" y="' + y + '" width="640" height="' + (300-y) + '" fill="#33475a" opacity="0.5"/>';
+  }
+
+  // ---- Chapter 1: rain-soaked inn window, night ----
+  var ART_HOCTRO = svgScene({
+    alt: "Quán trọ đêm mưa",
+    sky: ["#151B2E", "#1F2A45", "#2C3A5C"],
+    glow: { x: 150, y: 60, r: 90, color: "#B9C7E0" },
+    hillBack: "#111726",
+    hillFront: "#0C1220",
+    stars: true,
+    rain: true,
+    extra:
+      '<polygon points="330,300 330,205 400,170 470,205 470,300" fill="#161022"/>' +
+      '<polygon points="330,205 400,170 470,205 400,222" fill="#1F1830"/>' +
+      '<rect x="385" y="235" width="34" height="42" rx="2" fill="#F2C879" opacity="0.92"/>' +
+      '<rect x="385" y="235" width="34" height="42" rx="2" fill="none" stroke="#2A2013" stroke-width="1.5"/>' +
+      '<line x1="402" y1="235" x2="402" y2="277" stroke="#2A2013" stroke-width="1.2"/>' +
+      '<line x1="385" y1="256" x2="419" y2="256" stroke="#2A2013" stroke-width="1.2"/>'
+  });
+
+  // ---- Chapter 2: yamen courtyard, red lanterns ----
+  var ART_QUANXUAN = svgScene({
+    alt: "Sân công đường",
+    sky: ["#3B2A22", "#6B4530", "#9A6B3E"],
+    glow: { x: 500, y: 70, r: 100, color: "#F4C77A" },
+    hillBack: "#4A3324",
+    hillFront: "#332216",
+    extra:
+      '<polygon points="180,300 180,190 320,150 460,190 460,300" fill="#241812"/>' +
+      '<polygon points="150,196 320,150 490,196 320,214" fill="#3A2718"/>' +
+      '<rect x="270" y="230" width="100" height="70" fill="#2E1F15"/>' +
+      lantern(215, 210, "#C43B2F") +
+      lantern(425, 210, "#C43B2F")
+  });
+
+  // ---- Chapter 3: market at dusk ----
+  var ART_CUAROI = svgScene({
+    alt: "Chợ chiều tà",
+    sky: ["#3A2440", "#8A4A45", "#E08A4F"],
+    glow: { x: 470, y: 210, r: 130, color: "#FFD08A" },
+    hillBack: "#5B3A3A",
+    hillFront: "#3C2430",
+    extra:
+      '<polygon points="90,300 90,205 150,170 210,205 210,300" fill="#241522"/>' +
+      '<rect x="90" y="205" width="120" height="8" fill="#1B0F1A"/>' +
+      '<circle cx="150" cy="188" r="10" fill="#F4B860" opacity="0.9"/>' +
+      '<polygon points="240,300 240,215 300,180 360,215 360,300" fill="#2A1826"/>' +
+      '<rect x="240" y="215" width="120" height="8" fill="#1B0F1A"/>' +
+      lantern(300, 198, "#F4A23B")
+  });
+
+  // ---- Chapter 4: warm room, night outside, mother-in-law's bedside ----
+  var ART_NANGDAU = svgScene({
+    alt: "Bên giường bệnh trong đêm",
+    sky: ["#1B2438", "#233052", "#324268"],
+    glow: { x: 500, y: 55, r: 55, color: "#EDE6D2" },
+    hillBack: "#161E30",
+    hillFront: "#0F1524",
+    stars: true,
+    extra:
+      '<rect x="160" y="70" width="320" height="230" rx="4" fill="#3A2A18" opacity="0.96"/>' +
+      '<rect x="182" y="94" width="276" height="182" fill="#F3D9A0" opacity="0.9"/>' +
+      '<rect x="182" y="94" width="276" height="182" fill="none" stroke="#2A1D10" stroke-width="2"/>' +
+      '<line x1="320" y1="94" x2="320" y2="276" stroke="#2A1D10" stroke-width="1.6"/>' +
+      '<line x1="182" y1="185" x2="458" y2="185" stroke="#2A1D10" stroke-width="1.6"/>' +
+      lantern(400, 150, "#E8A94A")
+  });
+
+  // ---- Chapter 5: crossroads under the moon ----
+  var ART_CONBAC = svgScene({
+    alt: "Ngã ba đường dưới trăng",
+    sky: ["#0E1526", "#182338", "#233250"],
+    glow: { x: 470, y: 55, r: 70, color: "#E7E9DE" },
+    hillBack: "#101728",
+    hillFront: "#0A0F1C",
+    stars: true,
+    extra:
+      '<polygon points="70,300 70,215 120,190 170,215 170,300" fill="#151B2C"/>' +
+      '<rect x="112" y="245" width="16" height="30" fill="#E8A94A" opacity="0.85"/>' +
+      '<polygon points="470,300 470,220 540,192 610,220 610,300" fill="#1E1424"/>' +
+      lantern(540, 205, "#D34B3B") + lantern(560, 212, "#D34B3B") +
+      '<rect x="313" y="140" width="10" height="130" fill="#171E30"/>' +
+      '<rect x="270" y="150" width="90" height="12" fill="#171E30" transform="rotate(-8 315 156)"/>' +
+      '<rect x="270" y="172" width="90" height="12" fill="#171E30" transform="rotate(7 315 178)"/>'
+  });
+
+  // ---- Chapter 6: healer's hut at dawn ----
+  var ART_YSI = svgScene({
+    alt: "Am thuốc lúc bình minh",
+    sky: ["#3B2A46", "#B06A6E", "#F0AE79"],
+    glow: { x: 150, y: 230, r: 150, color: "#FBD9A0" },
+    hillBack: "#5B3C52",
+    hillFront: "#3A2438",
+    extra:
+      '<polygon points="380,300 380,210 460,165 540,210 540,300" fill="#241A2C"/>' +
+      '<polygon points="360,214 460,163 560,214 460,232" fill="#33223C"/>' +
+      '<path d="M470,163 C462,140 478,128 468,108" stroke="#EADFD0" stroke-width="4" fill="none" opacity="0.55" stroke-linecap="round"/>' +
+      '<rect x="420" y="248" width="70" height="52" fill="#2E2035"/>' +
+      '<ellipse cx="455" cy="248" rx="35" ry="8" fill="#5B7452"/>'
+  });
+
+  var CH_ART = { hoctro: ART_HOCTRO, quanxuan: ART_QUANXUAN, cuaroi: ART_CUAROI, nangdau: ART_NANGDAU, conbac: ART_CONBAC, ysi: ART_YSI };
+
+  // ---- Chapters 7-26 ----
+  CH_ART.caycau = svgScene({
+    alt: "Cầu gãy đêm đông", sky: ["#101826","#182437","#233047"],
+    glow: { x: 500, y: 60, r: 60, color: "#D8E1EA" }, hillBack: "#131C2C", hillFront: "#0B121E", stars: true,
+    extra: bridgeSil(320, 235, 140) + treeSil(120, 292, 46, 24, "#1C2B22")
+  });
+  CH_ART.thunacdanh = svgScene({
+    alt: "Bức thư giấu tên", sky: ["#5C6B78","#8B9AA3","#C7CFCF"],
+    glow: { x: 480, y: 70, r: 90, color: "#F2EEE0" }, hillBack: "#7C8B84", hillFront: "#5A695F",
+    extra: houseSil(190, 300, 90, 68, "#3A2A22", "#4A372B") + houseSil(430, 300, 90, 68, "#3A2A22", "#4A372B")
+  });
+  CH_ART.cangian = svgScene({
+    alt: "Cân gian chợ gạo", sky: ["#8D8264","#C7B98C","#E7DAB0"],
+    glow: { x: 470, y: 80, r: 110, color: "#FFF6D8" }, hillBack: "#94875F", hillFront: "#6E6244",
+    extra: tableSil(320, 292, 180)
+  });
+  CH_ART.trelac = svgScene({
+    alt: "Trẻ lạc chợ Tết", sky: ["#3A1F2A","#7A3540","#C9683F"],
+    glow: { x: 460, y: 200, r: 120, color: "#FFCB86" }, hillBack: "#5A2E32", hillFront: "#391E24",
+    extra: tableSil(320, 292, 200) + lantern(190, 130, "#D34B3B") + lantern(450, 110, "#D34B3B")
+  });
+  CH_ART.noanhem = svgScene({
+    alt: "Món nợ nghĩa huynh đệ", sky: ["#33241C","#6B4530","#A5713E"],
+    glow: { x: 160, y: 70, r: 100, color: "#F4C77A" }, hillBack: "#4A3324", hillFront: "#302013",
+    extra: houseSil(400, 300, 110, 78, "#3A2A22", "#54402C")
+  });
+  CH_ART.chimse = svgScene({
+    alt: "Chim sẻ mắc lưới", sky: ["#B9D6D6","#DCE9C9","#F1EFCF"],
+    glow: { x: 200, y: 70, r: 110, color: "#FFF9DE" }, hillBack: "#8FAE7C", hillFront: "#5F7E52",
+    extra: treeSil(430, 300, 58, 32, "#4C6B46") + '<rect x="388" y="196" width="34" height="26" fill="none" stroke="#2A1D12" stroke-width="1.4"/><line x1="388" y1="209" x2="422" y2="209" stroke="#2A1D12" stroke-width="1"/>'
+  });
+  CH_ART.loithe = svgScene({
+    alt: "Lời thề gốc đa", sky: ["#3A2440","#8A4A45","#DE8A50"],
+    glow: { x: 500, y: 210, r: 130, color: "#FFCE8E" }, hillBack: "#5B3A3A", hillFront: "#3C2430",
+    extra: treeSil(320, 300, 18, 92, "#3F5A3C")
+  });
+  CH_ART.khachtrongheo = svgScene({
+    alt: "Khách trọ không tiền", sky: ["#151B2E","#1F2A45","#2C3A5C"],
+    glow: { x: 150, y: 60, r: 70, color: "#B9C7E0" }, hillBack: "#111726", hillFront: "#0C1220", rain: true,
+    extra: houseSil(320, 300, 150, 88, "#241A12", "#33261A") + lantern(320, 216, "#E8A94A")
+  });
+  CH_ART.binhphong = svgScene({
+    alt: "Bình phong người giàu mới", sky: ["#E9C878","#F0D79A","#F7E7C0"],
+    glow: { x: 470, y: 70, r: 120, color: "#FFF7DE" }, hillBack: "#B79A5E", hillFront: "#8C7343",
+    extra: houseSil(320, 300, 220, 108, "#5A3C26", "#6E4C30")
+  });
+  CH_ART.oannguoio = svgScene({
+    alt: "Oan ức người ở", sky: ["#141A2C","#1E2740","#2A3554"],
+    glow: { x: 500, y: 55, r: 55, color: "#D8DCE6" }, hillBack: "#131A2A", hillFront: "#0B111C", stars: true,
+    extra: houseSil(320, 300, 180, 98, "#241A12", "#332619")
+  });
+  CH_ART.mualu = svgScene({
+    alt: "Mưa lũ mùa màng", sky: ["#3A4A44","#54685E","#7A9088"],
+    glow: { x: 480, y: 60, r: 70, color: "#DCE6DE" }, hillBack: "#3E4F46", hillFront: "#28352E", rain: true,
+    extra: waterBand(268) + treeSil(180, 268, 30, 22, "#2C3B2C")
+  });
+  CH_ART.tiengdan = svgScene({
+    alt: "Tiếng đàn đêm trăng", sky: ["#171233","#2A2050","#3E3268"],
+    glow: { x: 470, y: 55, r: 80, color: "#EDE8F0" }, hillBack: "#1E1A38", hillFront: "#120F24", stars: true,
+    extra: houseSil(320, 300, 140, 72, "#2A1F38", "#3A2C4A")
+  });
+  CH_ART.chuyendo = svgScene({
+    alt: "Chuyến đò cơn giông", sky: ["#131E28","#1D3038","#284650"],
+    glow: { x: 470, y: 55, r: 55, color: "#C9DEE2" }, hillBack: "#122029", hillFront: "#0B141A", rain: true,
+    extra: waterBand(262) + boatSil(320, 250, 120)
+  });
+  CH_ART.dichbenhxom = svgScene({
+    alt: "Bệnh lạ trong xóm", sky: ["#5A5A6C","#7E7E90","#A6A6B4"],
+    glow: { x: 480, y: 80, r: 80, color: "#EDEAF2" }, hillBack: "#6A6A78", hillFront: "#48485A",
+    extra: houseSil(320, 300, 120, 78, "#2E2620", "#3C322A")
+  });
+  CH_ART.ketromdoi = svgScene({
+    alt: "Kẻ trộm vì đói", sky: ["#10162A","#1A2440","#26325A"],
+    glow: { x: 150, y: 70, r: 60, color: "#DDE3EE" }, hillBack: "#131A2E", hillFront: "#0B0F1C", stars: true,
+    extra: tableSil(230, 292, 120) + houseSil(450, 300, 100, 70, "#241A12", "#33261A")
+  });
+  CH_ART.thaydo = svgScene({
+    alt: "Danh tiếng thầy đồ", sky: ["#BFE0DE","#DCEDD0","#F1F2CF"],
+    glow: { x: 200, y: 70, r: 110, color: "#FFFAE0" }, hillBack: "#8DAE8C", hillFront: "#5D7E5C",
+    extra: houseSil(320, 300, 160, 88, "#3A2C1E", "#4C3C26")
+  });
+  CH_ART.hoimon = svgScene({
+    alt: "Của hồi môn và lòng tham", sky: ["#4A2334","#8A4358","#D97C6A"],
+    glow: { x: 470, y: 80, r: 110, color: "#FFD6C2" }, hillBack: "#5E3040", hillFront: "#3C1E2A",
+    extra: houseSil(320, 300, 150, 84, "#4A2E2E", "#5E3E3E")
+  });
+  CH_ART.tuongco = svgScene({
+    alt: "Pho tượng cổ trong miếu hoang", sky: ["#22331F","#3E5738","#6E8A5E"],
+    glow: { x: 320, y: 90, r: 130, color: "#E6EFC8" }, hillBack: "#2C3F27", hillFront: "#1B2818",
+    extra: treeSil(140, 300, 46, 28, "#33472F") + houseSil(320, 300, 90, 60, "#2E3B2E", "#3C4A3C") + treeSil(510, 300, 52, 32, "#2C3D29")
+  });
+  CH_ART.hangxomganhghet = svgScene({
+    alt: "Hàng xóm ganh ghét", sky: ["#3A2536","#7A4550","#C9713F"],
+    glow: { x: 470, y: 90, r: 110, color: "#FFCB9A" }, hillBack: "#573A3E", hillFront: "#382428",
+    extra: houseSil(210, 300, 90, 68, "#3A2A22", "#4A372B") + houseSil(430, 300, 90, 68, "#3A2A22", "#4A372B")
+  });
+  CH_ART.baocuoithu = svgScene({
+    alt: "Cơn bão cuối mùa thu", sky: ["#151E2A","#1F303C","#2A4450"],
+    glow: { x: 460, y: 55, r: 55, color: "#C9DEE2" }, hillBack: "#132129", hillFront: "#0B141A", rain: true,
+    extra: waterBand(264) + houseSil(150, 300, 90, 60, "#241A12", "#33261A") + boatSil(430, 254, 140)
+  });
+
+  // ---- Intro: moon-gate garden path ----
+  var ART_INTRO = svgScene({
+    alt: "Cổng trăng dẫn vào hành trình",
+    sky: ["#2C3A4A", "#5A7268", "#B7C48A"],
+    glow: { x: 320, y: 150, r: 120, color: "#F6EAC8" },
+    hillBack: "#3E5346",
+    hillFront: "#28382F",
+    extra:
+      '<circle cx="320" cy="185" r="95" fill="#182219"/>' +
+      '<circle cx="320" cy="185" r="86" fill="#3E5346"/>' +
+      '<path d="M240,300 Q320,250 400,300 Z" fill="#182219"/>'
+  });
+
+  // ---- Endings ----
+  var ART_END_GOOD = svgScene({
+    alt: "Phước dày thọ trường",
+    sky: ["#F6E7B0", "#F3C878", "#E79A5C"],
+    glow: { x: 480, y: 70, r: 130, color: "#FFF3CF" },
+    hillBack: "#7C9A5E",
+    hillFront: "#4E7048",
+    extra:
+      '<line x1="140" y1="300" x2="140" y2="190" stroke="#3A2A18" stroke-width="6"/>' +
+      '<circle cx="140" cy="168" r="34" fill="#E8879A"/>' +
+      '<circle cx="112" cy="182" r="24" fill="#EFA1AF"/>' +
+      '<circle cx="168" cy="182" r="24" fill="#EFA1AF"/>' +
+      birdV(380, 90, 1) + birdV(420, 70, 0.8) + birdV(450, 100, 0.7)
+  });
+  var ART_END_MID = svgScene({
+    alt: "An khang bình ổn",
+    sky: ["#CDE3E8", "#A9CBD6", "#8FB6C4"],
+    glow: { x: 480, y: 80, r: 100, color: "#FFFAEA" },
+    hillBack: "#6E8F82",
+    hillFront: "#43604F",
+    extra:
+      '<line x1="470" y1="300" x2="470" y2="205" stroke="#3A2A18" stroke-width="6"/>' +
+      '<circle cx="470" cy="182" r="38" fill="#5E7C56"/>'
+  });
+  var ART_END_MIXED = svgScene({
+    alt: "Đường đời trồi sụt",
+    sky: ["#2A3550", "#5C5F72", "#C9905C"],
+    glow: { x: 170, y: 70, r: 90, color: "#E9E4CE" },
+    hillBack: "#41485C",
+    hillFront: "#2A2E3E",
+    stars: true,
+    extra:
+      '<circle cx="500" cy="70" r="46" fill="#F3B15C" opacity="0.9"/>'
+  });
+  var ART_END_BAD = svgScene({
+    alt: "Họa đến từ tâm buông thả",
+    sky: ["#161A22", "#232A38", "#33261F"],
+    glow: { x: 460, y: 60, r: 60, color: "#9AA6B2" },
+    hillBack: "#12151C",
+    hillFront: "#0B0D12",
+    rain: true,
+    extra:
+      '<path d="M180,300 L188,210 L170,205 L192,150 L178,148 L204,95" stroke="#0B0D12" stroke-width="6" fill="none" stroke-linecap="round"/>' +
+      '<path d="M192,150 L220,130" stroke="#0B0D12" stroke-width="5" fill="none" stroke-linecap="round"/>' +
+      birdV(300, 60, 0.7) + birdV(330, 78, 0.6)
+  });
+
+  var STORAGE_KEY = "tkbg_progress_v1";
+
+  // ---------------- STATE ----------------
+  var state = {
+    phuc: 0,
+    completed: {}, // id -> {choiceIndex, delta}
+    screen: "intro", // intro | map | story | result | ending
+    activeChapter: null,
+    activeResult: null
+  };
+
+  function loadProgress() {
+    try {
+      var raw = localStorage.getItem(STORAGE_KEY);
+      if (raw) {
+        var parsed = JSON.parse(raw);
+        if (parsed && typeof parsed.phuc === "number" && parsed.completed) {
+          state.phuc = parsed.phuc;
+          state.completed = parsed.completed;
+        }
+      }
+    } catch (e) { /* ignore, start fresh */ }
+  }
+
+  function saveProgress() {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify({
+        phuc: state.phuc,
+        completed: state.completed
+      }));
+    } catch (e) { /* storage unavailable, continue without saving */ }
+  }
+
+  function resetProgress() {
+    state.phuc = 0;
+    state.completed = {};
+    try { localStorage.removeItem(STORAGE_KEY); } catch (e) {}
+  }
+
+  // ---------------- RENDER HELPERS ----------------
+  var main = document.getElementById("main");
+  var phucValueEl = document.getElementById("phucValue");
+  var globalNote = document.getElementById("globalNote");
+
+  function updatePhucDisplay() {
+    phucValueEl.textContent = state.phuc;
+  }
+
+  function el(tag, cls, html) {
+    var e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (html !== undefined) e.innerHTML = html;
+    return e;
+  }
+
+  function clearMain() {
+    main.innerHTML = "";
+  }
+
+  // ---------------- SCREENS ----------------
+  function renderIntro() {
+    clearMain();
+    globalNote.classList.remove("hidden");
+    var wrap = el("div", "intro");
+    wrap.appendChild(el("div", "art-frame hero", ART_INTRO));
+    wrap.appendChild(el("div", "glyph", "壽康"));
+    wrap.appendChild(el("h1", "", "Thọ Khang Bảo Giám"));
+    wrap.appendChild(el("div", "sub", "Hành Trình Nhân Quả"));
+    wrap.appendChild(el("p", "lead",
+      "Tựa sách xưa vẫn răn dạy: giữ được nết na trong lòng thì phúc dày, buông thả theo dục vọng nhất thời thì họa đến không hay. Hai mươi sáu câu chuyện dưới đây, dựa theo tinh thần các sách khuyến thiện cổ, đặt bạn vào ngã rẽ của những con người bình thường. Mỗi lựa chọn của bạn sẽ gieo một hạt giống — thiện hay bất thiện — và Phước Đức sẽ ghi lại điều đó."
+    ));
+    var btn = el("button", "btn block", "Bắt Đầu Hành Trình");
+    btn.addEventListener("click", function(){
+      state.screen = "map";
+      render();
+    });
+    wrap.appendChild(btn);
+
+    if (Object.keys(state.completed).length > 0) {
+      var cont = el("button", "btn secondary block", "Tiếp Tục Từ Trước");
+      cont.style.marginTop = "10px";
+      cont.addEventListener("click", function(){
+        state.screen = "map";
+        render();
+      });
+      wrap.appendChild(cont);
+    }
+    main.appendChild(wrap);
+  }
+
+  function renderMap() {
+    clearMain();
+    globalNote.classList.remove("hidden");
+    var wrap = el("div", "");
+    wrap.appendChild(el("div", "map-title", "Hai Mươi Sáu Ngã Rẽ Cuộc Đời"));
+    wrap.appendChild(el("div", "map-sub", "Chọn một câu chuyện để bước vào."));
+
+    var list = el("div", "chapters");
+    CHAPTERS.forEach(function(ch, idx){
+      var done = state.completed[ch.id];
+      var card = el("button", "chapter-card" + (done ? " done" : ""));
+      card.setAttribute("type", "button");
+      var thumb = el("div", "thumb", CH_ART[ch.artKey]);
+      thumb.appendChild(el("div", "num-badge", String(idx + 1).padStart(2, "0")));
+      var info = el("div", "info");
+      info.appendChild(el("h3", "", ch.title));
+      info.appendChild(el("p", "", ch.tag));
+      card.appendChild(thumb);
+      card.appendChild(info);
+      if (done) {
+        var deltaTxt = (done.delta >= 0 ? "+" : "") + done.delta;
+        card.appendChild(el("div", "status", "Đã qua · " + deltaTxt));
+      } else {
+        card.appendChild(el("div", "status", "Chưa mở"));
+      }
+      card.addEventListener("click", function(){
+        state.activeChapter = ch;
+        state.screen = "story";
+        render();
+      });
+      list.appendChild(card);
+    });
+    wrap.appendChild(list);
+
+    if (Object.keys(state.completed).length === CHAPTERS.length) {
+      var hr = el("hr", "rule");
+      wrap.appendChild(hr);
+      var endBtn = el("button", "btn block", "Xem Kết Cục Cuộc Đời");
+      endBtn.addEventListener("click", function(){
+        state.screen = "ending";
+        render();
+      });
+      wrap.appendChild(endBtn);
+    }
+
+    main.appendChild(wrap);
+  }
+
+  function renderStory() {
+    clearMain();
+    globalNote.classList.add("hidden");
+    var ch = state.activeChapter;
+    var wrap = el("div", "");
+    wrap.appendChild(el("div", "art-frame", CH_ART[ch.artKey]));
+    wrap.appendChild(el("div", "story-tag", ch.tag));
+    wrap.appendChild(el("div", "story-title", ch.title));
+    wrap.appendChild(el("div", "story-text", ch.intro));
+
+    var choicesWrap = el("div", "choices");
+    ch.choices.forEach(function(choice, i){
+      var b = el("button", "choice");
+      b.setAttribute("type", "button");
+      var mark = el("span", "mark", String.fromCharCode(65 + i));
+      var txt = el("span", "", choice.text);
+      b.appendChild(mark);
+      b.appendChild(txt);
+      b.addEventListener("click", function(){
+        state.phuc += choice.delta;
+        state.completed[ch.id] = { choiceIndex: i, delta: choice.delta };
+        saveProgress();
+        updatePhucDisplay();
+        state.activeResult = choice;
+        state.screen = "result";
+        render();
+      });
+      choicesWrap.appendChild(b);
+    });
+    wrap.appendChild(choicesWrap);
+    main.appendChild(wrap);
+  }
+
+  function renderResult() {
+    clearMain();
+    globalNote.classList.add("hidden");
+    var ch = state.activeChapter;
+    var res = state.activeResult;
+    var wrap = el("div", "");
+    wrap.appendChild(el("div", "art-frame", CH_ART[ch.artKey]));
+    wrap.appendChild(el("div", "story-tag", ch.tag));
+
+    var bannerText = res.tone === "good" ? "Thiện Nghiệp" : (res.tone === "bad" ? "Bất Thiện Nghiệp" : "Nghiệp Xen Lẫn");
+    wrap.appendChild(el("div", "result-banner " + res.tone, bannerText));
+
+    wrap.appendChild(el("div", "story-title", ch.title));
+    wrap.appendChild(el("div", "story-text result", res.result));
+
+    var deltaClass = res.delta < 0 ? "neg" : "";
+    var deltaTxt = (res.delta >= 0 ? "+" : "") + res.delta;
+    wrap.appendChild(el("div", "karma-delta", "Phước Đức thay đổi: <b class=\"" + deltaClass + "\">" + deltaTxt + "</b>"));
+
+    var actions = el("div", "actions");
+
+    var curIndex = CHAPTERS.findIndex(function(c){ return c.id === ch.id; });
+    var nextCh = CHAPTERS[curIndex + 1];
+    var allDone = Object.keys(state.completed).length === CHAPTERS.length;
+
+    if (nextCh) {
+      var nextBtn = el("button", "btn block", "Chương Tiếp Theo →");
+      nextBtn.addEventListener("click", function(){
+        state.activeChapter = nextCh;
+        state.screen = "story";
+        render();
+      });
+      actions.appendChild(nextBtn);
+    } else if (allDone) {
+      var endBtn0 = el("button", "btn block", "Xem Kết Cục Cuộc Đời");
+      endBtn0.addEventListener("click", function(){
+        state.screen = "ending";
+        render();
+      });
+      actions.appendChild(endBtn0);
+    }
+
+    var backBtn = el("button", "btn secondary block", "Trở Về Ngã Rẽ");
+    backBtn.addEventListener("click", function(){
+      state.screen = "map";
+      render();
+    });
+    actions.appendChild(backBtn);
+
+    wrap.appendChild(actions);
+    main.appendChild(wrap);
+  }
+
+  function getEndingProfile(avg) {
+    if (avg >= 5.3) {
+      return {
+        glyph: "福壽",
+        art: ART_END_GOOD,
+        title: "Phước Dày Thọ Trường",
+        text: "Trải qua sáu ngã rẽ, bạn phần lớn chọn giữ mình ngay thẳng, thương người, trọng nghĩa. Như lời sách xưa: \"Tích thiện chi gia, tất hữu dư khánh\" — nhà tích điều thiện ắt có phúc thừa. Đường đời của bạn tuy có gập ghềnh nhưng gốc rễ vững chắc, phúc phần lan đến con cháu."
+      };
+    } else if (avg >= 2) {
+      return {
+        glyph: "安康",
+        art: ART_END_MID,
+        title: "An Khang Bình Ổn",
+        text: "Bạn giữ được cái gốc thiện lương trong phần lớn quyết định, dù đôi lúc còn do dự hoặc tính toán thiệt hơn. Cuộc đời như vậy không rực rỡ nhưng bình yên, ít tai ương lớn, đủ để tự hào khi nhìn lại."
+      };
+    } else if (avg >= -0.8) {
+      return {
+        glyph: "浮沉",
+        art: ART_END_MIXED,
+        title: "Đường Đời Trồi Sụt",
+        text: "Có lúc bạn chọn điều thiện, có lúc lại buông theo cái lợi trước mắt. Phước và họa vì thế cứ đan xen, được mất khó lường. Sách xưa dạy: \"Nhất niệm chi thiện, tường vân khánh tuyết; nhất niệm chi ác, lệ cốc âm phong\" — một niệm thiện đủ mây lành phủ khắp, một niệm ác đủ gió dữ nổi lên."
+      };
+    } else {
+      return {
+        glyph: "禍殃",
+        art: ART_END_BAD,
+        title: "Họa Đến Từ Tâm Buông Thả",
+        text: "Phần lớn ngã rẽ, bạn chọn con đường dễ dãi cho bản thân mà quên nghĩ đến người khác. Như trong các câu chuyện khuyến thiện, cái lợi nhất thời thường kéo theo hệ lụy lâu dài. Đây không phải kết cục cuối cùng — mỗi ngày sống là một ngã rẽ mới để chọn lại."
+      };
+    }
+  }
+
+  function renderEnding() {
+    clearMain();
+    globalNote.classList.remove("hidden");
+    var total = state.phuc;
+    var avg = total / CHAPTERS.length;
+    var profile = getEndingProfile(avg);
+
+    var wrap = el("div", "ending");
+    wrap.appendChild(el("div", "art-frame hero", profile.art));
+    wrap.appendChild(el("div", "glyph", profile.glyph));
+    wrap.appendChild(el("h2", "", profile.title));
+    wrap.appendChild(el("div", "score", "Tổng Phước Đức: " + total));
+    wrap.appendChild(el("p", "", profile.text));
+
+    var journal = el("div", "journal");
+    journal.appendChild(el("h4", "", "Nhật Ký Sáu Ngã Rẽ"));
+    CHAPTERS.forEach(function(ch){
+      var rec = state.completed[ch.id];
+      var row = el("div", "journal-row");
+      row.appendChild(el("span", "", ch.title));
+      if (rec) {
+        var d = (rec.delta >= 0 ? "+" : "") + rec.delta;
+        row.appendChild(el("span", rec.delta < 0 ? "neg" : "", d));
+      } else {
+        row.appendChild(el("span", "", "—"));
+      }
+      journal.appendChild(row);
+    });
+    wrap.appendChild(journal);
+
+    var actions = el("div", "actions");
+    var mapBtn = el("button", "btn secondary block", "Xem Lại Các Ngã Rẽ");
+    mapBtn.addEventListener("click", function(){
+      state.screen = "map";
+      render();
+    });
+    var resetBtn = el("button", "btn block", "Bắt Đầu Hành Trình Mới");
+    resetBtn.addEventListener("click", function(){
+      resetProgress();
+      state.screen = "intro";
+      render();
+    });
+    actions.appendChild(mapBtn);
+    actions.appendChild(resetBtn);
+    wrap.appendChild(actions);
+
+    main.appendChild(wrap);
+  }
+
+  function render() {
+    updatePhucDisplay();
+    if (state.screen === "intro") renderIntro();
+    else if (state.screen === "map") renderMap();
+    else if (state.screen === "story") renderStory();
+    else if (state.screen === "result") renderResult();
+    else if (state.screen === "ending") renderEnding();
+    window.scrollTo(0, 0);
+  }
+
+  loadProgress();
+  render();
+})();
+</script>
+</body>
+</html>
